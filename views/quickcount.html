@@ -1,0 +1,66 @@
+$def with(total_suara,perolehan_suara)
+<html>
+<head>
+<title>Quick Count</title>
+<link rel='stylesheet' href="/static/css/quickcount.css"/>
+<script src='/static/js/jquery.min.js'></script>
+<script src='/static/js/lib/mqttws31.js'></script>
+<script>
+var total_suara = $total_suara;
+var suara = [];
+suara[1] = $perolehan_suara['suara1'];
+suara[2] = $perolehan_suara['suara2'];
+suara[3] = $perolehan_suara['suara3'];
+suara[4] = $perolehan_suara['suara4'];
+</script>
+<script src='/static/js/quickcount.js'></script>
+
+
+</head>
+<body>
+<div class='chart_box'>
+<ul >
+<li id="1">
+	<div class='chart_container' >
+		<div class='persentase' ></div>
+		<div class='chart c1' ></div>
+	</div>
+	<div class='content'>
+		<div class='main'><img src="/static/images/userpic.gif"/></div>
+		<div class='count'></div>
+	</div>
+</li>
+<li id="2">
+	<div class='chart_container' >
+		<div class='persentase' ></div>
+		<div class='chart c2' ></div>
+	</div>
+	<div class='content'>
+		<div class='main'><img src="/static/images/userpic.gif"/></div>
+		<div class='count'></div>
+	</div>
+</li>
+<li id="3">
+	<div class='chart_container' >
+		<div class='persentase' ></div>
+		<div class='chart c3' ></div>
+	</div>
+	<div class='content'>
+		<div class='main'><img src="/static/images/userpic.gif"/></div>
+		<div class='count'></div>
+	</div>
+</li>
+<li id="4">
+	<div class='chart_container' >
+		<div class='persentase' ></div>
+		<div class='chart c4' ></div>
+	</div>
+	<div class='content'>
+		<div class='main'><img src="/static/images/userpic.gif"/></div>
+		<div class='count'></div>
+	</div>
+</li>
+</ul>
+</div>
+</body>
+</html>

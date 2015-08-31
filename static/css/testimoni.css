@@ -1,0 +1,164 @@
+::-webkit-input-placeholder { font-size:12px; }
+::-moz-placeholder { font-size:12px;  } /* firefox 19+ */
+:-ms-input-placeholder { font-size:12px; } /* ie */
+input:-moz-placeholder { font-size:12px; }
+
+.testimoni .input{
+    background: gainsboro;
+    border-radius: 10px;
+    padding:5px 10px;
+}
+.testimoni .input div{
+    margin:10px;
+}
+.testimoni .input input[type="text"]{
+    height:25px;
+    width: 200px;
+    border:solid 1px grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: inherit;
+}
+
+.testimoni .input textarea{
+    font-family: inherit;
+    border:solid 1px grey;
+    border-radius: 5px;
+    width:300px;
+    height: 100px;
+    color: inherit;
+    padding: 10px;
+}
+
+.testimoni .input input[type="submit"]{
+    color: inherit;
+    width: 100px;
+    border:solid 1px grey;
+    border-radius: 5px;
+    padding: 5px 0;
+    cursor: pointer;
+
+    background: #efede0;
+}
+.testimoni .input input[type="submit"]:hover{
+    border:solid 1px black;
+    color: black;
+}
+.thread{
+    margin-top: 10px;
+    
+}
+.thread .item{
+    border-top: solid 2px black;
+}
+.thread .item .info{
+    font-size: 16px;
+    margin: 3px 0;
+    color: black;
+    display:inline-block;
+}
+.thread .item .info .name{
+    font-weight: bolder;
+}
+.thread .item .action * , .thread .item .info *{
+    display:inline-block;
+}
+
+.thread .item .content{
+    margin-bottom:5px;
+    padding-left:10px
+}
+
+
+.thread .item .reply{
+    margin-left: 20px;
+}
+.thread .item .reply{
+    border-top: solid 1px grey;
+}
+.thread .item .reply .info{
+    font-size: inherit;
+}
+
+.thread .item .action .time{
+    font-size: 9px;
+    margin-left: 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.thread .action a *{
+    margin: 0 2px;
+}
+.thread .balas, .thread .like{
+    margin-right: 10px;
+    text-decoration: none;
+    color: inherit;
+    height: 20px;
+}
+
+.thread .icon{
+    width: 15px;  
+    height: 15px;
+}
+.thread .balas .icon{
+    background: url(/static/images/reply.png) no-repeat;  
+    background-size: 15px;
+}
+
+.thread .like .icon{
+    background: url(/static/images/like.png) no-repeat;  
+    background-size: 15px;
+}
+.reply_box{
+    /* border-top: solid 1px grey; */
+    margin-left: 20px;
+}
+.reply_box *{
+    margin: 3px 0px;
+}
+
+.testimoni .input{
+    background: gainsboro;
+    border-radius: 10px;
+    padding:5px 10px;
+}
+.testimoni .input div{
+    margin:10px;
+}
+
+.reply_box input[type="text"]{
+    height:20px;
+    width: 200px;
+    border:solid 1px grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: inherit;
+}
+
+.reply_box textarea{
+    font-family: inherit;
+    border:solid 1px grey;
+    border-radius: 5px;
+    width:200px;
+    height: 50px;
+    color: inherit;
+    padding: 10px;
+}
+
+.reply_box button{
+    color: inherit;
+    width: 50px;
+    border:solid 1px grey;
+    border-radius: 5px;
+    padding: 2px 0;
+    cursor: pointer;
+
+    background: #efede0;
+}
+.reply_box input[type="submit"]:hover{
+    border:solid 1px black;
+    color: black;
+}
+#reply_box_template, #reply_template{
+	display:none;
+}

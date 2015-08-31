@@ -1,0 +1,70 @@
+$def with(testimoni,reply)
+<div class="testimoni">
+	<h2>Testimoni</h2>
+	
+	<div class="input">
+	<form method="post"  onsubmit="return validate();" action="post/">
+		<div class="nama">
+			<input type="text" id="nama" name="nama" placeholder="Nama"/>
+		</div>
+		<div class="no_tlp">
+			<input type="text" id="no_tlp" name="no_tlp" placeholder="No. Telepon (optional)" />
+		</div>
+		<div class="testimoni">
+			<textarea name="testimoni" id="testimoni" placeholder="Testimoni..."></textarea>
+		</div>
+		<div class="submit">
+			<input type="submit"  name="kirim" value="Kirim" />
+		</div>
+	</form>
+	</div>
+	
+	<div class="thread">
+	$for testi in testimoni:
+		<div class="item" id="item_$testi['id']">
+			<div class="info">Testimoni dari <div class="name">$testi['nama']</div> : </div>
+			<div class="content">$testi['testimoni']</div>
+			<div class="action">
+				<a href="javascript:show_reply('$testi['id']')" class="balas"><div class='icon'></div><div class="count">$testi['reply_count']</div></a>
+				<a class="like" href="javascript:void(0)" onclick="like_testi(this,'$str(testi['id'])')"><div class='icon'></div><div class="count">$testi['like']</div></a>
+				<div class="time">$testi['waktu_format']</div>
+			</div>
+			<div class="reply_box"></div>
+			<div class="replies">
+			$for rep in reply:
+				$if rep['parent']!=testi['id']: 
+					$continue
+				<div class="reply">
+					<div class="info"> Balasan dari <div class="name">$rep['nama']</div> :</div>
+					<div class="content">$rep['reply']</div>
+					<div class="action"><a class="like" href="javascript:void(0)" onclick="like_reply(this,'$rep['id']')"><div class='icon'></div><div class="count">$rep['like']</div></a><div class="time">$rep['waktu_format']</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="reply_template">
+		<div class="reply">
+			<div class="info"> Balasan dari <div class="name">$$nama</div> :</div>
+			<div class="content">$$content</div>
+			<div class="action">
+				<a class="like" href="javascript:void(0)" onclick="like_reply(this,'$$rep_id')"><div class='icon'></div><div class="count">0</div></a>
+				<div class="time">$$time</div>
+			</div>
+		</div>
+	</div>
+	<div id="reply_box_template">
+		<div class="nama">
+			<input type="text" id="nama" placeholder="Nama"/>
+		</div>
+		<div class="txt_balas">
+			<textarea id="balas" placeholder="Balas..."></textarea>
+		</div>
+		<div class="submit">
+			<button id="kirim">Kirim</button>
+		</div>
+	</div>
+	
+	
+</div>

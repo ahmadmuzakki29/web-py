@@ -1,0 +1,243 @@
+/*
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+*/ 
+@charset "utf-8";
+
+body { 
+	margin:0; padding:0; width:100%; 
+	color: #565454; 
+	font:normal 14px/1.8em Arial, Helvetica, sans-serif; 
+	background: url(/static/images/bg1.png);
+}
+.clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+h1 { margin:0; padding:36px 0 19px 32px; color:#7b7979; font:normal 36px/1.2em Arial, Helvetica, sans-serif;}
+
+
+
+h2 { font: normal 24px 'Slabo 27px', serif; margin:8px 0; text-transform:uppercase; color: rgb(0, 181, 0);}
+p { margin:8px 0; padding:0 0 8px 0; font:normal 12px/1.8em Arial, Helvetica, sans-serif;}
+a { color: #168AF1; text-decoration:underline;}
+
+.content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar { margin:0; padding:0;}
+.content_resize, .fbg_resize, .footer_resize { margin:0 auto; /* padding:0 40px; */ width: 100%;}
+
+.main { 
+	padding:0; 
+	margin: 0 auto; 
+	width: 75%;
+	background: white;
+	box-shadow: 5px 0px 5px #888888,-5px 0px 5px rgba(20,20,20,0.3);
+}
+.panel{
+	
+    border-bottom-right-radius: 30px;
+    //border-bottom-left-radius: 5% 25%;
+	background: white;
+	width: 350px;
+	
+	position:absolute;
+	z-index:2;
+	padding: 5px;
+	
+    border-right: solid 2px grey;
+    border-bottom: solid 2px grey;
+}
+.slideshow{
+	height:340px;
+	background: rgb(169, 169, 197);
+	width: 100%;
+	
+}
+
+.logo { 
+	background:url(/static/images/logo.jpg) no-repeat center; 
+	background-size: 100% 100%;
+	height: 100px; 
+	width: 100px;
+	
+	margin-left: 10px;
+	display:inline-block;
+}
+.visi{
+	display:inline-block;
+	width: 220px;
+	float:right;
+	text-align:center;
+	font-weight: bold;
+	
+	color: #ED3939;
+	margin-top:15px;
+	font-family: 'Slabo 27px', serif;
+	font-size: initial;
+}
+.header { 
+	width: 90%; 
+	margin: 0 auto;
+	position:relative;
+	padding-top:10px;
+}
+
+/* menu */
+
+
+.menu_nav {
+	position: absolute;
+	bottom:0px;
+	z-index:2;
+	width:auto;
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+	width: 100%;
+}
+
+.line{
+	position:absolute;
+	bottom: 0;
+	height: 3px;
+	width: 100%;
+	background: grey;
+	z-index:1;
+}
+.menu_wrap{
+	position:absolute;
+	z-index:2;
+	bottom:0;
+}
+.request_edit{
+	font-weight:bolder;
+	color:black;
+}
+
+.menu_nav .menu{
+	float:left;
+	
+	position:relative;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	margin-left: 5px;
+	padding-top:4px;
+	border: solid 3px grey;
+	background-color: rgb(205, 242, 255);
+}
+.parent_menu{
+	background-image: url(/static/images/arrow_down.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+	padding-right: 10px;
+	background-position: 95% 57%;
+}
+.menu_nav .menu:hover{
+	background-color: white;
+}
+.menu_nav .menu:hover > a{
+	color: #ED3939;
+}
+
+.menu_nav div.active a{ 
+	color: #ED3939;
+}
+.menu_nav div.active { 
+	background-color:white;
+	border-bottom: solid 3px white;
+
+}
+
+.menu_nav div.submenu{
+	margin-left: 0px;
+	display:block;
+	position:absolute;
+	width: 100%;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	background: white;
+
+}
+.menu_nav div.submenu{
+	border: solid 3px grey;
+	border-top: 0px;
+	margin-left: -3px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	display:none;
+}
+.menu_nav div.submenu a{
+	text-align:left;
+	color: #168AF1; /*biru*/
+}
+
+.menu_nav div.submenu a:hover{
+	color: #ED3939; /* merah */
+}
+
+
+.menu_nav div.submenu a:hover > .active{
+	color: white;
+}
+
+.header_shadow{
+	height:340px;
+	position:absolute;
+	box-shadow: 5px -5px 5px grey,-5px -5px 5px grey;
+	width:100%;
+	
+}
+.menu_nav div>a { 
+	display:block; 
+	margin:0; 
+	padding:8px 20px; 
+	
+	
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+/* content */
+.content_resize { padding-right:0; padding-top:16px; width:930px; background-color:#fff;}
+.content .mainbar { float:left; width: 65%; margin-left: 5%; margin-top: 20px;}
+/*.content .mainbar img { margin-bottom:24px; padding:4px; border:1px solid #b7b7b7; background-color:#fff;}*/
+.content .mainbar img.fl { float:left; margin-right:12px;}
+.content .mainbar .article, .content .sidebar .gadget { margin:0; padding:0 0 16px 0;}
+.content .sidebar { float:right; width: 25%; margin-top: 20px;}
+ul.sb_menu, ul.ex_menu { margin:0; padding:0; list-style:none; color:#959595;}
+
+ul.sb_menu li { padding:4px 0; border-bottom:1px solid #e3e3e3; width:220px;}
+ul.ex_menu li { padding:4px 0 8px;}
+ul.sb_menu li a, ul.ex_menu li a { text-decoration:none; margin-left:-16px; padding-left:16px;}
+ul.sb_menu li a:hover, ul.ex_menu li a:hover { color:#00a0cb; font-weight:bold; background:url(images/li_a.gif) no-repeat left center;}
+ul.sb_menu li a:hover { text-decoration:underline;}
+ul.ex_menu li a:hover { text-decoration:none;}
+
+/* subpages */
+.content .mainbar .comment { margin:0; padding:16px 0 0 0;}
+.content .mainbar .comment img.userpic { border:1px solid #dedede; margin:10px 16px 0 0; padding:0; float:left;}
+
+/* fbg */
+.fbg_resize { background-color:#efede0; /* padding:24px 40px; */}
+.fbg img { border:1px solid #d6d6d6;}
+.fbg .col { margin:0; display:inline-block; vertical-align:top; width:30%}
+.fbg .c1 { padding:16px 16px 0 16px; ;}
+.fbg .c2 { padding:16px 16px; }
+.fbg .c3 { padding:16px 0 0 16px; }
+.fbg .c1 img { margin:8px 16px 4px 0; float:left;}
+
+/* footer */
+.footer { background-color:#e1e0d5; font-size: 12px;}
+.footer_resize > div{
+	padding: 8px 40px;
+}
+.footer p.lf { margin:0; padding:4px 0; float:right; width:auto; line-height:1.5em;}
+ul.fmenu { margin:0; padding:2px 0; list-style:none; float:left; width:auto;}
+ul.fmenu li { margin:0; padding:0 4px; float:left;}
+ul.fmenu li a { color:#8e8e8e; text-decoration:none; padding:2px 6px;}
+ul.fmenu li a:hover, ul.fmenu li.active a { color:#00a0cb;}
+ul.fmenu li a:hover { text-decoration:underline;}
+
+/* form */
+ol { list-style:none;}
+ol li { display:block; clear:both;}
+ol li label { display:block; margin:0; /* padding:16px 0 0 0; */}
+ol li input.text { width:480px; border:1px solid #c0c0c0; margin:2px 0; padding:5px 2px; height:16px; background:#fff;}
+ol li textarea { width:480px; border:1px solid #c0c0c0; margin:2px 0; padding:2px; background:#fff;}
+ol li .send { margin:16px 0 0 0;}

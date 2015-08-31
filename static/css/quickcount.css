@@ -1,0 +1,75 @@
+.chart_box{
+    text-align: center;
+    height: 100%;
+  
+
+}
+.chart_box ul{
+    height: 100%;
+    width: 100%;
+    padding:0;
+    margin: 0 auto;
+    display:table;
+    table-layout:fixed;
+}
+.chart_box li{
+    position:relative;
+    display:table-cell;
+    vertical-align:bottom;
+}
+.chart_container{
+    
+}
+.content{
+    height: 25%;
+}
+.count{
+    
+     padding: 3px;
+     border: solid 3px; 
+    /* background: white; */
+    border-radius: 5px; 
+    text-align:center;
+    font: 20px Arial;
+    font-weight:bolder;
+    color: #707070;
+    display: inline-block;
+    
+}
+.content img{
+    height:80%;
+
+}
+.persentase{
+    text-align:center;
+    font: 35px Arial;
+    font-weight:bolder;
+    color: #707070;
+
+}
+.chart{
+    width: 120px;
+    border: solid 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    margin:0 auto;
+}
+
+.c1{
+    background:#0E9B53;
+    border: none;
+}
+.c2{
+    
+    background:#F2ED5A;
+    border: none;
+}
+.c3{
+    background: #4547F2;
+    border: none;
+}
+.c4{
+    background: #E20C22;
+    border: none;
+}

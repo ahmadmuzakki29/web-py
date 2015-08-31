@@ -1,0 +1,164 @@
+$def with(css,js,menu,title,content)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.bluewebtemplates.com
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Radia Ranai - $title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="/static/tree/_styles.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/png" href="/static/images/favico.png"/>
+	<link type="text/css" href="/static/pikachoose/styles/simple.css" rel="stylesheet" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	<link type="text/css" href="/static/pikachoose/styles/bottom.css" rel="stylesheet" />
+	<script type="text/javascript" src="/static/pikachoose/lib/jquery.pikachoose.js"></script>
+	<script type="text/javascript" src="/static/pikachoose/lib/jquery.touchwipe.min.js"></script>
+	
+	$for style in css:
+		<link href="/static/css/$(style).css" rel="stylesheet" type="text/css" />
+	$for script in js:
+		<script type="text/javascript" src="/static/js/$(script).js"></script>
+	
+	<!--link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'> <!--'Lobster Two', cursive-->
+	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'> 
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'> <!--font-family: 'Josefin Sans', sans-serif;-->
+	
+	<script src="/static/js/onload.js"></script>
+</head>
+<body>
+<div class="main">
+
+  <div class="header">
+    
+	<div class="panel">
+		<div class="logo"></div>
+		<div class="visi">
+			MENJADI MITRA PROESIONAL DAN TERPERCAYA DALAM SETIAP MOMENT TERBAIK ANDA
+		</div>
+	</div>
+	
+	<div class="menu_nav">
+	<div class='line'></div>
+	<div class="menu_wrap">
+	  <div class='$:cond( menu=='TRAVEL',"active") menu parent_menu' >
+		<a href="/">Tour & Travel</a>
+		<div class='submenu'>
+			<a href="#">Paket Wisata</a>
+			<a href="#">Ticketing</a>
+			<a href="#">Voucher Hotel</a>
+		</div>
+	  </div>
+	  <div class='$:cond( menu=='ADV',"active") menu parent_menu' >
+		<a href="/adv/">Advertising</a>
+		<div class='submenu'>
+			<a href="#">Mug</a>
+			<a href="#">Banner</a>
+			<a href="#">Percetakan</a>
+		</div>
+	</div>
+	  <div class='$:cond( menu=='TESTI',"active") menu' ><a href="/testimoni/">Testimoni</a></div>
+	  <div class='$:cond( menu=='ABOUT',"active") menu'><a href="/tentang/">Tentang Kami</a></div>
+	</div>
+	
+	</div>
+	
+	<div class="header_shadow"></div>
+	<div class="pikachoose slideshow" >
+		<!--ul id="pikame" class="jcarousel-skin-pika" >
+			<li><img src="/static/slideshow/branding.jpg"/><span>Branding sticker.</span></li>
+			<li><img src="/static/slideshow/buku_yasin.jpg"/><span>Buku yasin</span></li>
+		</ul-->
+	</div>
+	
+	
+    
+  </div>
+
+  <div class="content">
+    
+      <div class="mainbar">
+		$:content
+        
+      </div>
+	  
+
+
+
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star">Produk Kami</h2>
+          <ol class="tree">
+			<li>
+			<label for="folder1">Tour & Travel</label> <input type="checkbox" id="folder1" /> 
+			<ol>
+				<li class="file"><a href="#">Paket Wisata</a></li>
+				<li class="file"><a href="#">Ticketing</a></li>
+				<li class="file"><a href="#">Voucher Hotel</a></li>
+			</ol>
+			</li>
+			<li>
+			<label for="folder2">Advertising</label> <input type="checkbox" id="folder2" /> 
+			<ol>
+				<li class="file"><a href="#">Mug</a></li>
+				<li class="file"><a href="#">Percetakan</a></li>
+				<li class="file"><a href="#">Banner</a></li>
+			</ol>
+			</li>
+          </ol>
+		  
+        </div>
+       
+      </div>
+      <div class="clr"></div>
+    </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2>Tentang Kami</h2>
+        <img src="/static/images/logo.jpg" width="66" height="66" alt="pix" />
+        <p>CV. RADHIA RANAI adalah [tentang kami]</p>
+      </div>
+      <div class="col c2">
+        <h2>Didukung Oleh</h2>
+        <ul class="sb_menu">
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+        </ul>
+      </div>
+      <div class="col c3">
+        <h2>Kontak</h2>
+        <p>CV. Radhia Ranai</p>
+        <p><strong>Tlp:</strong> [nomor telefon]<br />
+          <strong>Alamat:</strong> Jl. Teuku Umar 6 Magersari Sidoarjo<br />
+          <strong>E-mail:</strong> <a href="mailto:info@radiaranai.com">info@radiaranai.com</a></p>
+      </div>
+      <div class="clr"></div>
+   </div>	
+  </div>
+</div>
+
+  <div class="footer">
+    <div class="footer_resize">
+	<div>
+      <p class="lf">&copy; Copyright Radiaranai.com. Designed by Blue <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <ul class="fmenu">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="clr"></div>
+  </div>
+
+</body>
+</html>
+

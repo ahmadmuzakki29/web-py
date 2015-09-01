@@ -1,4 +1,5 @@
-client = new Paho.MQTT.Client(window.location.host, 61614, "client");
+id = makeid();
+client = new Paho.MQTT.Client(window.location.host, 61614, "ID : qc_"+id);
 console.log(window.location.host);
 
 client.onConnectionLost = onConnectionLost;
@@ -69,4 +70,14 @@ function animate(i,persen){
 	$("#"+i).find(".chart").css("height",h+"px");
 	$("#"+i).find(".persentase").html(persen+"%");
 	
+}
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }

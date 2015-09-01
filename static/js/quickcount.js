@@ -1,5 +1,5 @@
-client = new Paho.MQTT.Client("localhost", 61614, "client");
-
+client = new Paho.MQTT.Client(window.location.host, 61614, "client");
+console.log(window.location.host);
 
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
@@ -26,17 +26,22 @@ function onMessageArrived(message) {
 	suara[3] += parseInt(msg.suara_3);
 	suara[4] += parseInt(msg.suara_4);
 	count_suara();
+	setTimeout(function(){ show_count--;},2500);
 	showing(1,parseInt(msg.suara_1));
 	showing(2,parseInt(msg.suara_2));
 	showing(3,parseInt(msg.suara_3));
 	showing(4,parseInt(msg.suara_4));
+	
+	
 }
 
 $(function(){
 	count_suara();
 });
 
+var show_count = 0;
 function count_suara(){
+	show_count++;
 	for(i=1;i<suara.length;i++){
 		persen = ((suara[i]*100)/total_suara).toFixed(1);
 		setTimeout(animate(i,persen),0);
@@ -48,13 +53,20 @@ function showing(i,jml){
 	$(count).html("+"+jml);
 	$(count).css("display","inline-block");
 	
-	setTimeout(function(count){$(count).fadeOut(1000)},2500,count);
+	setTimeout(function(count){ 
+		if(show_count==1){
+			$(count).fadeOut(1000);
+			//$(count).hide();
+		}
+		
+	},2500,count);
+	
 }
 
 function animate(i,persen){
 	h = $("#"+i).height();
-	h = (persen/100 * h).toFixed(2);
-	$("#"+i).find(".chart").animate({height:h+"px"});
+	h = (persen/100 * h).toFixed(0);
+	$("#"+i).find(".chart").css("height",h+"px");
 	$("#"+i).find(".persentase").html(persen+"%");
 	
 }

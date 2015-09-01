@@ -46,7 +46,7 @@ function count_suara(){
 function showing(i,jml){
 	count = $("#"+i).find(".count")[0];
 	$(count).html("+"+jml);
-	$(count).show();
+	$(count).css("display","inline-block");
 	
 	setTimeout(function(count){$(count).fadeOut(1000)},2500,count);
 }

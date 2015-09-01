@@ -27,13 +27,12 @@
     
      padding: 3px;
      border: solid 3px; 
-    /* background: white; */
     border-radius: 5px; 
     text-align:center;
     font: 20px Arial;
     font-weight:bolder;
     color: #707070;
-    display: inline-block;
+    display: none;
     
 }
 .content img{

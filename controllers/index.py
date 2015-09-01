@@ -1,5 +1,5 @@
-from travel import travel
+from quickcount import quickcount
 class index():
 	def index(self):
-		t = travel()
+		t = quickcount()
 		return t.index()

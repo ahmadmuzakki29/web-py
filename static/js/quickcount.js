@@ -22,16 +22,16 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
 	console.log(message.payloadString);
 	msg = JSON.parse(message.payloadString);
-	suara[1] += parseInt(msg.suara_1);
-	suara[2] += parseInt(msg.suara_2);
-	suara[3] += parseInt(msg.suara_3);
-	suara[4] += parseInt(msg.suara_4);
+	suara[1] += parseInt(msg.suara1);
+	suara[2] += parseInt(msg.suara2);
+	suara[3] += parseInt(msg.suara3);
+	suara[4] += parseInt(msg.suara4);
 	count_suara();
 	setTimeout(function(){ show_count--;},2500);
-	showing(1,parseInt(msg.suara_1));
-	showing(2,parseInt(msg.suara_2));
-	showing(3,parseInt(msg.suara_3));
-	showing(4,parseInt(msg.suara_4));
+	showing(1,parseInt(msg.suara1));
+	showing(2,parseInt(msg.suara2));
+	showing(3,parseInt(msg.suara3));
+	showing(4,parseInt(msg.suara4));
 	
 	
 }

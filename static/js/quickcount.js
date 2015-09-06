@@ -43,8 +43,8 @@ function onMessageArrived(message) {
 function suara_masuk(){
 	
 	$("#suaramasuk").html((sah+tidaksah)+" dari "+php);
-	if(php==0) php=1;
 	persen = (sah+tidaksah/php)*100;
+	if(isNaN(persen)) persen=0;
 	$("#persen").html(persen+"%");
 }
 
@@ -69,11 +69,12 @@ $(function(){
 
 var show_count = 0;
 function count_suara(){
-	if(php==0) php =1;
+	
 	show_count++;
 	for(i=1;i<suara.length;i++){
 		if(suara[i]>php) continue;
 		persen = ((suara[i]*100)/php).toFixed(2);
+		if(isNaN(persen)) persen=0;
 		setTimeout(animate(i,persen),0);
 	}
 }

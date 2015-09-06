@@ -1,4 +1,4 @@
-$def with(total_suara,perolehan_suara)
+$def with(dpt,dpt_live,php,suara,sah,tidaksah)
 <html>
 <head>
 <title>Quick Count</title>
@@ -6,12 +6,16 @@ $def with(total_suara,perolehan_suara)
 <script src='/static/js/jquery.min.js'></script>
 <script src='/static/js/lib/mqttws31.js'></script>
 <script>
-var total_suara = $total_suara;
+var dpt = $dpt;
+var dpt_live = $dpt_live;
+var php = $php;
+var sah = $sah;
+var tidaksah = $tidaksah;
 var suara = [];
-suara[1] = $perolehan_suara['suara1'];
-suara[2] = $perolehan_suara['suara2'];
-suara[3] = $perolehan_suara['suara3'];
-suara[4] = $perolehan_suara['suara4'];
+suara[1] = $suara['total1'];
+suara[2] = $suara['total2'];
+suara[3] = $suara['total3'];
+suara[4] = $suara['total4'];
 
 </script>
 <script src='/static/js/quickcount.js'></script>
@@ -60,6 +64,14 @@ suara[4] = $perolehan_suara['suara4'];
 		<div class='main'><img src="/static/images/qc4.jpg"/></div>
 		<div class='count'></div>
 	</div>
+</li>
+<li class='keterangan' >
+<div> <div>Total DPT Awal :</div><div style='float:right;' id='dpt'> $dpt </div></div>
+<div> <div>Total DPT Saat Ini :</div><div style='float:right;' id='dpt_live'> $dpt_live </div></div>
+<div> <div>Suara Sah :</div><div style='float:right;' id='sah'> $sah </div></div>
+<div> <div>Suara Tidak Sah :</div><div style='float:right;' id='tidaksah'> $tidaksah </div></div>
+<div> <div>Suara Masuk :</div><div style='float:right;' id='suaramasuk'></div></div>
+<div><div style='float:right;' id='persen'>0%</div></div>
 </li>
 </ul>
 </div>

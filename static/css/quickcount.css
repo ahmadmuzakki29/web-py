@@ -88,3 +88,15 @@
     background: #E20C22;
     border: none;
 }
+
+.keterangan{
+    vertical-align: top !important; 
+    text-align:left;
+}
+.keterangan > div{
+    width:100%;
+}
+.keterangan div{
+    font: 14pt Arial;
+    display:inline-block;
+}

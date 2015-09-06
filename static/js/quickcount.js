@@ -72,6 +72,7 @@ function count_suara(){
 	if(php==0) php =1;
 	show_count++;
 	for(i=1;i<suara.length;i++){
+		if(suara[i]>php) continue;
 		persen = ((suara[i]*100)/php).toFixed(2);
 		setTimeout(animate(i,persen),0);
 	}

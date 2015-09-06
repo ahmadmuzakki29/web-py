@@ -49,16 +49,16 @@ function suara_masuk(){
 }
 
 function suara_process(total){
-	suara[1] += parseInt(msg.suara1);
-	suara[2] += parseInt(msg.suara2);
-	suara[3] += parseInt(msg.suara3);
-	suara[4] += parseInt(msg.suara4);
+	suara[1] += parseInt(msg.total1);
+	suara[2] += parseInt(msg.total2);
+	suara[3] += parseInt(msg.total3);
+	suara[4] += parseInt(msg.total4);
 	count_suara();
 	setTimeout(function(){ show_count--;},2500);
-	showing(1,parseInt(msg.suara1));
-	showing(2,parseInt(msg.suara2));
-	showing(3,parseInt(msg.suara3));
-	showing(4,parseInt(msg.suara4));
+	showing(1,parseInt(msg.total1));
+	showing(2,parseInt(msg.total2));
+	showing(3,parseInt(msg.total3));
+	showing(4,parseInt(msg.total4));
 	
 }
 
@@ -74,7 +74,7 @@ function count_suara(){
 	for(i=1;i<suara.length;i++){
 		if(suara[i]>php) continue;
 		persen = ((suara[i]*100)/php).toFixed(2);
-		if(isNaN(persen)) persen=0;
+		if(isNaN(persen)) persen="0.00";
 		setTimeout(animate(i,persen),0);
 	}
 }

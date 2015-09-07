@@ -96,7 +96,6 @@ function showing(i,jml){
 	setTimeout(function(count){ 
 		if(show_count==1){
 			$(count).fadeOut(1000);
-			//$(count).hide();
 		}
 	},2500,count);	
 }

@@ -15,7 +15,7 @@ function onConnect() {
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
-    location.reload();
+    //location.reload();
   }
 }
 
@@ -23,7 +23,7 @@ function onMessageArrived(message) {
 	console.log(message.payloadString);
 	msg = JSON.parse(message.payloadString);
 	id = msg.id;
-	
+	console.log(id);
 	if(id=="suara"){
 		suara_process(msg);
 	}else if(id=="dpt"){
@@ -40,11 +40,16 @@ function onMessageArrived(message) {
 	}
 }
 
+$(function(){
+	suara_masuk();
+	count_suara();
+});
+
 function suara_masuk(){
-	
 	$("#suaramasuk").html((sah+tidaksah)+" dari "+php);
-	persen = (sah+tidaksah/php)*100;
-	if(isNaN(persen)) persen=0;
+	persen = ((sah+tidaksah/php)*100).toFixed(2);
+	
+	if(isNaN(persen)) persen="0,00";
 	$("#persen").html(persen+"%");
 }
 
@@ -62,16 +67,14 @@ function suara_process(total){
 	
 }
 
-$(function(){
-	suara_masuk();
-	count_suara();
-});
+
 
 var show_count = 0;
 function count_suara(){
 	
 	show_count++;
 	for(i=1;i<suara.length;i++){
+		$("#"+i).find("#masuk").html(suara[i]);
 		if(suara[i]>php) continue;
 		persen = ((suara[i]*100)/php).toFixed(2);
 		if(isNaN(persen)) persen="0.00";
@@ -82,16 +85,20 @@ function count_suara(){
 function showing(i,jml){
 	count = $("#"+i).find(".count")[0];
 	$(count).html("+"+jml);
-	$(count).css("display","inline-block");
+	
+	w = $("#"+i).find(".content").width()/2;
+	left = w-($(count).outerWidth()/2);
+	
+	$(count).css({'left':left,'bottom':$(count).outerHeight()});
+	
+	$(count).show();
 	
 	setTimeout(function(count){ 
 		if(show_count==1){
 			$(count).fadeOut(1000);
 			//$(count).hide();
 		}
-		
-	},2500,count);
-	
+	},2500,count);	
 }
 
 function animate(i,persen){

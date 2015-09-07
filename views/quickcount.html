@@ -31,8 +31,10 @@ suara[4] = $suara['total4'];
 		<div class='chart c1' ></div>
 	</div>
 	<div class='content'>
-		<div class='main'><img src="/static/images/qc1.jpg"/></div>
-		<div class='count'></div>
+		<div class='count' ></div>
+		<div class='main' style='background-image: url("/static/images/qc1.jpg")'></div>
+		
+		<div class='masuk'>Suara masuk : <span id='masuk'></span></div>
 	</div>
 </li>
 <li id="2">
@@ -41,8 +43,9 @@ suara[4] = $suara['total4'];
 		<div class='chart c2' ></div>
 	</div>
 	<div class='content'>
-		<div class='main'><img src="/static/images/qc2.jpg"/></div>
+		<div class='main'style='background-image: url("/static/images/qc2.jpg")'></div>
 		<div class='count'></div>
+		<div class='masuk'>Suara masuk : <span id='masuk'></span></div>
 	</div>
 </li>
 <li id="3">
@@ -51,8 +54,9 @@ suara[4] = $suara['total4'];
 		<div class='chart c3' ></div>
 	</div>
 	<div class='content'>
-		<div class='main'><img src="/static/images/qc3.jpg"/></div>
+		<div class='main'style='background-image: url("/static/images/qc3.jpg")'></div>
 		<div class='count'></div>
+		<div class='masuk'>Suara masuk : <span id='masuk'></span></div>
 	</div>
 </li>
 <li id="4">
@@ -61,16 +65,17 @@ suara[4] = $suara['total4'];
 		<div class='chart c4' ></div>
 	</div>
 	<div class='content'>
-		<div class='main'><img src="/static/images/qc4.jpg"/></div>
+		<div class='main'style='background-image: url("/static/images/qc4.jpg")'></div>
 		<div class='count'></div>
+		<div class='masuk'>Suara masuk : <span id='masuk'></span></div>
 	</div>
 </li>
 <li class='keterangan' >
-<div> <div>Total DPT Awal :</div><div style='float:right;' id='dpt'> $dpt </div></div>
-<div> <div>Total DPT Saat Ini :</div><div style='float:right;' id='dpt_live'> $dpt_live </div></div>
-<div> <div>Suara Sah :</div><div style='float:right;' id='sah'> $sah </div></div>
-<div> <div>Suara Tidak Sah :</div><div style='float:right;' id='tidaksah'> $tidaksah </div></div>
-<div> <div>Suara Masuk :</div><div style='float:right;' id='suaramasuk'></div></div>
+<div> <div>Total DPT Awal : </div><div style='float:right;' id='dpt'> $dpt </div></div>
+<div> <div>Total DPT Saat Ini : </div><div style='float:right;' id='dpt_live'> $dpt_live </div></div>
+<div> <div>Suara Sah : </div><div style='float:right;' id='sah'> $sah </div></div>
+<div> <div>Suara Tidak Sah : </div><div style='float:right;' id='tidaksah'> $tidaksah </div></div>
+<div> <div>Suara Masuk : </div><div style='float:right;' id='suaramasuk'></div></div>
 <div><div style='float:right;' id='persen'>0%</div></div>
 </li>
 </ul>

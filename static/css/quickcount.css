@@ -21,18 +21,23 @@
     
 }
 .content{
-    height: 25%;
-    overflow: hidden;
+    height: 30%;
+    /* overflow: hidden; */
     position: relative;
+    border-top:solid 2px;
 }
 .content .main{
-    height: 70%;
-    /* display: inline-block; */
+    display: inline-block;
+    height: 90%;
+    
+    width: 70%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
 }
 .count{
-    
-     
-     padding: 3px;
+     position: absolute;
+     padding: 5px;
      height: 15%;
      border: solid 3px; 
     border-radius: 5px; 
@@ -47,11 +52,6 @@
     
 }
 .content img{
-    /* height: 200px; */
-
-    /* width: 240px; */
-    /* width: 100%; */
-    /* height: 100%; */
     display: inline-block;
     height: 159.5;
 }
@@ -99,4 +99,10 @@
 .keterangan div{
     font: 14pt Arial;
     display:inline-block;
+    margin:2% 0;
+}
+.masuk{
+    /* float:left; */
+    /* display: inline-block; */
+    height: 10%;
 }

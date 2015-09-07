@@ -47,7 +47,8 @@ $(function(){
 
 function suara_masuk(){
 	$("#suaramasuk").html((sah+tidaksah)+" dari "+php);
-	persen = ((sah+tidaksah/php)*100).toFixed(2);
+	persen = ((sah+tidaksah)/php)*100;
+	persen = (persen).toFixed(2);
 	
 	if(isNaN(persen)) persen="0,00";
 	$("#persen").html(persen+"%");

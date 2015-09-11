@@ -106,3 +106,9 @@
     /* display: inline-block; */
     height: 10%;
 }
+.upload{
+    position:absolute;
+    bottom:0;
+    right:0;
+    
+}

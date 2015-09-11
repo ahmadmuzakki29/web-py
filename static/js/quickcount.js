@@ -32,11 +32,13 @@ function onMessageArrived(message) {
 	}else if(id=="php"){
 		php += parseInt(msg.total);
 		suara_masuk();
+		count_suara();
 	}else if(id=="sah"){
 		sah += parseInt(msg.total1);
 		tidaksah += parseInt(msg.total2);
 		$("#sah").html(sah);
 		$("#tidaksah").html(tidaksah);
+		suara_masuk();
 	}
 }
 

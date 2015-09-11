@@ -72,26 +72,30 @@
 }
 
 .c1{
-    background:#0E9B53;
+    background: #FE2121;
     border: none;
 }
 .c2{
     
-    background:#F2ED5A;
+    background: #FFD100;
     border: none;
 }
 .c3{
-    background: #4547F2;
+    background: #5A9900;
     border: none;
 }
 .c4{
-    background: #E20C22;
+    background: #0C36E2;
     border: none;
 }
 
 .keterangan{
     vertical-align: top !important; 
     text-align:left;
+    border: solid 3px;
+    padding: 10px;
+    border-color: red;
+    border-radius: 10px;
 }
 .keterangan > div{
     width:100%;
@@ -109,6 +113,31 @@
 .upload{
     position:absolute;
     bottom:0;
-    right:0;
-    
+    left: 0;
+    padding: 10px;
+}
+.upload div{
+  font: 10pt serif;
+}
+.background{
+  left: 30;
+  top: -100;
+  width: 1028px;
+  height: 500px;
+  display: block;
+  position: absolute;
+}
+
+.background::after {
+  content: "";
+  background: url("/static/images/hatiku bg.jpg");
+  opacity: 0.2;
+  background-size:100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: -1;
 }

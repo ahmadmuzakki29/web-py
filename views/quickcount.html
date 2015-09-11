@@ -23,6 +23,14 @@ suara[4] = $suara['total4'];
 
 </head>
 <body>
+<script>
+$$(function(){
+	width = $$("body").width();
+	width = (80/100)*width;
+	$$(".background").width(width);
+});
+</script>
+<div class='background'></div>
 <div class='chart_box'>
 <ul >
 <li id="1">
@@ -80,9 +88,10 @@ suara[4] = $suara['total4'];
 
 <div class='upload'>
 <form action='https://app.radiaranai.com/upload_c1/' enctype="multipart/form-data" method='post'>
-<div> Nomor HP : <input type='text' name='nomor' /></div>
-<div> Upload C1 Model 1 : </div><div style='padding-left:20px;'><input type='file' name='c1_1'/></div><br/><br/>
-<div> Upload C1 Model 2 : </div><div style='padding-left:20px;'><input type='file' name='c1_2'/></div>
+<div style="font-size: 14pt; text-align:center; width: 90%;">Upload C1</div><br/>
+<div> Nomor HP : </div><br/><div><input type='text' name='nomor' /></div>
+<div> Model 1 : </div><div style='padding-left:20px;'><input type='file' name='c1_1'/></div><br/><br/>
+<div> Model 2 : </div><div style='padding-left:20px;'><input type='file' name='c1_2'/></div>
 <div><input type='submit' name='simpan' value='Kirim'/></div>
 </form>
 </div>

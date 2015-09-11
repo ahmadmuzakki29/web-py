@@ -96,6 +96,7 @@
     padding: 10px;
     border-color: red;
     border-radius: 10px;
+    background: #D2E2E7;
 }
 .keterangan > div{
     width:100%;
@@ -118,6 +119,13 @@
 }
 .upload div{
   font: 10pt serif;
+}
+
+.upload input[type='submit']{
+    padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 .background{
   left: 30;

@@ -71,7 +71,6 @@ function suara_process(total){
 }
 
 
-
 var show_count = 0;
 function count_suara(){
 	

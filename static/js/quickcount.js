@@ -77,8 +77,8 @@ function count_suara(){
 	show_count++;
 	for(i=1;i<suara.length;i++){
 		$("#"+i).find("#masuk").html(suara[i]);
-		if(suara[i]>php) continue;
-		persen = ((suara[i]*100)/php).toFixed(3);
+		if(suara[i]>sah) continue;
+		persen = ((suara[i]*100)/sah).toFixed(3);
 		if(isNaN(persen)) persen="0.000";
 		setTimeout(animate(i,persen),0);
 	}

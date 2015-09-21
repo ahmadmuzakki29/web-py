@@ -31,14 +31,14 @@ function onMessageArrived(message) {
 		$("#dpt_live").html(dpt_live);
 	}else if(id=="php"){
 		php += parseInt(msg.total);
-		suara_masuk();
-		count_suara();
+		
 	}else if(id=="sah"){
 		sah += parseInt(msg.total1);
 		tidaksah += parseInt(msg.total2);
 		$("#sah").html(sah);
 		$("#tidaksah").html(tidaksah);
 		suara_masuk();
+		count_suara();
 	}
 }
 
@@ -48,8 +48,9 @@ $(function(){
 });
 
 function suara_masuk(){
-	$("#suaramasuk").html((sah+tidaksah)+" dari "+php);
-	persen = ((sah+tidaksah)/php)*100;
+	masuk = suara[1]+suara[2]+suara[3]+suara[4];
+	$("#suaramasuk").html(masuk+" dari "+sah);
+	persen = (masuk/sah)*100;
 	persen = (persen).toFixed(2);
 	
 	if(isNaN(persen)) persen="0,00";
@@ -61,6 +62,7 @@ function suara_process(total){
 	suara[2] += parseInt(msg.total2);
 	suara[3] += parseInt(msg.total3);
 	suara[4] += parseInt(msg.total4);
+	suara_masuk();
 	count_suara();
 	setTimeout(function(){ show_count--;},2500);
 	showing(1,parseInt(msg.total1));
@@ -70,10 +72,8 @@ function suara_process(total){
 	
 }
 
-
 var show_count = 0;
 function count_suara(){
-	
 	show_count++;
 	for(i=1;i<suara.length;i++){
 		$("#"+i).find("#masuk").html(suara[i]);

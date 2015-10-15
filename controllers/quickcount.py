@@ -8,37 +8,40 @@ class quickcount():
 		layout = web.template.frender("views/quickcount.html");
 		return layout(*param);
 
-from core.model import model
+from core.mo_del import mo_del
 
-class m_qc(model):
+class m_qc(mo_del):
 	def __init__(self):
-		model.__init__(self)
+		mo_del.__init__(self,'saksi')
 	
 	def get_data(self):
-		sql = "select count(*) as dpt from qc_dpt"
-		dpt = self.get_query(sql)[0]['dpt']
+		dpt = self.db.dpt.count()
 		
-		sql = "select coalesce(sum(dpt),0) as dpt_live from "\
-			"(select sum(total1+total2+total3+total4) as dpt from c1_dpt_LK"\
-			" union "\
-			"select sum(total1+total2+total3+total4) as dpt from c1_dpt_PR) a"
-		dpt_live = self.get_query(sql)[0]['dpt_live']
+		res = self.cl.aggregate([
+			{'$group':{
+				'_id':None,
+				'dpt':{'$sum':{
+					'$add':[
+						'$dpt_LK.total1','$dpt_LK.total2','$dpt_LK.total3','$dpt_LK.total4',
+						'$dpt_PR.total1','$dpt_PR.total2','$dpt_PR.total3','$dpt_PR.total4'
+					]
+					}},
+				'php':{'$sum':{
+					'$add':[
+						'$php_LK.total1','$php_LK.total2','$php_LK.total3','$php_LK.total4',
+						'$php_PR.total1','$php_PR.total2','$php_PR.total3','$php_PR.total4'
+					]
+					}},
+				'suara1':{'$sum':'$suara.total1'},
+				'suara2':{'$sum':'$suara.total2'},
+				'suara3':{'$sum':'$suara.total3'},
+				'suara4':{'$sum':'$suara.total4'},
+				
+				'sah':{'$sum':'$sah.total1'},
+				'tidaksah':{'$sum':'$sah.total2'},
+			}}
+		]);
+		res = list(res)[0]
+		suara = {'total1':res['suara1'],'total2':res['suara2'],'total3':res['suara3'],'total4':res['suara4']}
 		
-		sql = "select coalesce(sum(php),0) as php from "\
-			"(select sum(total1+total2+total3+total4) as php from c1_php_LK"\
-			" union "\
-			"select sum(total1+total2+total3+total4) as php from c1_php_PR) a"
-		php = self.get_query(sql)[0]['php']
-		
-		
-		
-		sql = "select coalesce(sum(total1),0) as total1,coalesce(sum(total2),0) as total2,"\
-			"coalesce(sum(total3),0) as total3,coalesce(sum(total4),0) as total4 from c1_suara"
-		suara = self.get_query(sql)[0]
-		
-		sql = "select coalesce(sum(total1),0) as sah, coalesce(sum(total2),0) as tidaksah from c1_sah"
-		res = self.get_query(sql)[0]
-		sah,tidaksah = res['sah'],res['tidaksah']
-		
-		
-		return (dpt,dpt_live,php,suara,sah,tidaksah)
+		return (dpt,res['dpt'],res['php'],suara,res['sah'],res['tidaksah'])

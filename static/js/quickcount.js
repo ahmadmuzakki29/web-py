@@ -104,12 +104,13 @@ function showing(i,jml){
 
 function animate(i,persen){
 	h = $("#"+i).height();
+	h -= $("#"+i).find(".content").height();
 	h = (persen/100 * h).toFixed(0);
 	$("#"+i).find(".chart").css("height",h+"px");
 	p = persen.replace(".",",");
-	$("#"+i).find(".persentase").html(p+"%");
-	
+	$("#"+i).find(".persentase").html(p+"%");	
 }
+
 
 function makeid(){
     var text = "";

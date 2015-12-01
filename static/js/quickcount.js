@@ -96,7 +96,7 @@ function showing(i,jml){
 	$(count).show();
 	
 	setTimeout(function(count){ 
-		if(show_count==1){
+		if(show_count<2){
 			$(count).fadeOut(1000);
 		}
 	},2500,count);	

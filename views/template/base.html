@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radia Ranai - {{ title }}</title>
+{% for style in css %}
+	<link rel="stylesheet" href="/static/css/{{ style }}.css">
+{% endfor %}
+<!-- jQuery library -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+{% for script in js %}
+<script src='/static/js/{{ script }}.js'></script>
+{% endfor %}
+<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'> 
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'> <!--font-family: 'Josefin Sans', sans-serif;-->
+<link rel="shortcut icon" type="image/png" href="/static/images/favico.png"/>
+<link rel="stylesheet" href="/static/css/style.css">
+<link type="text/css" href="/static/pikachoose/styles/bottom.css" rel="stylesheet" />
+<script type="text/javascript" src="/static/pikachoose/lib/jquery.pikachoose.js"></script>
+<script type="text/javascript" src="/static/pikachoose/lib/jquery.touchwipe.min.js"></script>
+<link type="text/css" href="/static/pikachoose/styles/simple.css" rel="stylesheet" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/static/tree/_styles.css" rel="stylesheet" type="text/css" />
+<script src="/static/js/onload.js"></script>
+</head>
+<body>
+<div class='main'>
+{% include 'template/header.html' %}
+
+<div class="content">  
+	<div class="mainbar">
+	{% block content %}{% endblock %}
+
+      </div>
+
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star">Produk Kami</h2>
+          <ol class="tree">
+			<li>
+			<label for="folder1">Tour & Travel</label> <input type="checkbox" id="folder1" /> 
+			<ol>
+				<li class="file"><a href="#">Paket Wisata</a></li>
+				<li class="file"><a href="#">Ticketing</a></li>
+				<li class="file"><a href="#">Voucher Hotel</a></li>
+			</ol>
+			</li>
+			<li>
+			<label for="folder2">Advertising</label> <input type="checkbox" id="folder2" /> 
+			<ol>
+				<li class="file"><a href="#">Mug</a></li>
+				<li class="file"><a href="#">Percetakan</a></li>
+				<li class="file"><a href="#">Banner</a></li>
+			</ol>
+			</li>
+          </ol>
+		  
+        </div>
+       
+      </div>
+      <div class="clr"></div>
+    </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2>Tentang Kami</h2>
+        <img src="/static/images/logo.jpg" width="66" height="66" alt="pix" />
+        <p>CV. RADHIA RANAI adalah [tentang kami]</p>
+      </div>
+      <div class="col c2">
+        <h2>Didukung Oleh</h2>
+        <ul class="sb_menu">
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+          <li><a href="#">[didukung oleh]</a></li>
+        </ul>
+      </div>
+      <div class="col c3">
+        <h2>Kontak</h2>
+        <p>CV. Radhia Ranai</p>
+        <p><strong>Tlp:</strong> [nomor telefon]<br />
+          <strong>Alamat:</strong> Jl. Teuku Umar 6 Magersari Sidoarjo<br />
+          <strong>E-mail:</strong> <a href="mailto:info@radiaranai.com">info@radiaranai.com</a></p>
+      </div>
+      <div class="clr"></div>
+   </div>	
+  </div>
+</div>
+{% include 'template/footer.html' %}
+</body>
+</html>

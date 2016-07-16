@@ -6,8 +6,8 @@ from warnings import filterwarnings
 class model():
 	host = 'localhost'
 	user = 'root'
-	password = 'jaki'
-	database = 'radiaranai'
+	password = ''
+	database = ''
 	
 	def __init__(self):
 		filterwarnings('ignore', category = db.Warning)

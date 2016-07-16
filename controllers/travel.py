@@ -7,4 +7,4 @@ class travel(controller):
 		self.menu = "TRAVEL"
 		self.view = "travel"
 	
-
+	
